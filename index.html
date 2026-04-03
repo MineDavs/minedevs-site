@@ -1,99 +1,38 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-<meta charset="UTF-8">
 <title>MineDevs</title>
-
-<style>
-body {
-  margin: 0;
-  font-family: Arial;
-  background: linear-gradient(180deg, #000000, #0a0a0a);
-  color: white;
-  text-align: center;
-}
-
-.topo {
-  padding: 20px;
-}
-
-.badge {
-  background: #1a1a1a;
-  padding: 10px 20px;
-  border-radius: 20px;
-  display: inline-block;
-}
-
-h1 {
-  letter-spacing: 8px;
-  font-size: 40px;
-}
-
-.search {
-  margin: 20px;
-}
-
-.search input {
-  padding: 12px;
-  width: 80%;
-  border-radius: 20px;
-  border: none;
-  background: #111;
-  color: white;
-}
-
-.container {
-  padding: 20px;
-}
-
-.card {
-  background: #0f0f0f;
-  border-radius: 20px;
-  padding: 20px;
-  margin: 20px;
-}
-
-.btn {
-  background: white;
-  color: black;
-  padding: 10px;
-  border-radius: 20px;
-  display: inline-block;
-  margin-top: 10px;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
+<body onload="verificarLogin()">
 
-<body>
-
-<div class="topo">
-  <div class="badge">🚀 MineDevs</div>
+<div class="header">
   <h1>MINEDEVS</h1>
 </div>
 
-<div class="search">
-  <input type="text" placeholder="Pesquisar...">
-</div>
-
 <div class="container">
-  <div class="card">
-    <h2>HTML</h2>
-    <p>Aprenda estrutura</p>
-    <div class="btn">Aprender</div>
-  </div>
 
-  <div class="card">
-    <h2>CSS</h2>
-    <p>Estilização</p>
-    <div class="btn">Aprender</div>
-  </div>
-
-  <div class="card">
-    <h2>JavaScript</h2>
-    <p>Lógica</p>
-    <div class="btn">Aprender</div>
-  </div>
+<div class="progress">
+  <div class="bar" id="bar"></div>
 </div>
 
+<div class="card">
+  <h3>HTML</h3>
+  <a href="html.html" class="btn">Começar</a>
+</div>
+
+<div class="card">
+  <h3>CSS</h3>
+  <a href="css.html" class="btn">Começar</a>
+</div>
+
+<div class="card">
+  <h3>JavaScript</h3>
+  <a href="js.html" class="btn">Começar</a>
+</div>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
