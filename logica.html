@@ -1,43 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-<link rel="stylesheet" href="style.css">
-<title>Lógica</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula: Lógica de Programação | MineDevs</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://googleapis.com" rel="stylesheet">
 </head>
-<body onload="verificarLogin()">
+<body class="lesson-page">
 
-<div class="container">
-<h1>Lógica</h1>
+    <!-- Navbar igual a index -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <span class="nav-logo">MINEDEVS</span>
+            <div class="nav-links">
+                <a href="index.html">Sair da Aula</a>
+            </div>
+        </div>
+    </nav>
 
-<div id="aula"></div>
+    <main class="lesson-container">
+        <div class="video-wrapper">
+            <!-- Aqui você troca o LINK pelo da sua aula no YouTube ou Vimeo -->
+            <iframe width="100%" height="100%" src="https://youtube.com" title="Aula MineDevs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
 
-<button onclick="voltar()" class="btn">⬅</button>
-<button onclick="proxima()" class="btn">➡</button>
+        <div class="lesson-info">
+            <span class="tag">AULA 01</span>
+            <h1>Lógica de Programação com JS</h1>
+            <p>Nesta aula, o grupo MineDevs vai te ensinar como o computador pensa. Vamos entender variáveis, como criar condições (if/else) e como estruturar seu primeiro algoritmo real.</p>
+            
+            <div class="lesson-material">
+                <h3>Material de Apoio</h3>
+                <a href="#" class="material-link">PDF da Aula.pdf</a>
+                <a href="#" class="material-link">Código Fonte.js</a>
+            </div>
+        </div>
 
-<a href="index.html" class="btn">Voltar</a>
-</div>
+        <!-- Botões de Navegação -->
+        <div class="lesson-nav">
+            <button class="btn-sec" onclick="history.back()">VOLTAR</button>
+            <button class="btn-primary">PRÓXIMA AULA</button>
+        </div>
+    </main>
 
-<script src="script.js"></script>
+    <footer class="footer">
+        <p>MineDevs Academy &copy; 2024</p>
+    </footer>
 
-<script>
-let etapa=0,aula;
-
-function render(){
-if(etapa==0)aula.innerHTML="<h2>Programação</h2><p>Dar comandos ao PC</p>";
-else if(etapa==1)aula.innerHTML="<h2>Variáveis</h2><p>Guardam dados</p>";
-else if(etapa==2)aula.innerHTML="<h2>Condições</h2><p>if / else</p>";
-else if(etapa==3)aula.innerHTML="<h2>Loops</h2><p>Repetição</p>";
-else{aula.innerHTML="<h2>Fim 😎</h2>";salvar();}
-}
-
-function proxima(){etapa++;if(etapa>4)etapa=4;render();}
-function voltar(){etapa--;if(etapa<0)etapa=0;render();}
-
-window.onload=function(){
-verificarLogin();
-aula=document.getElementById("aula");
-render();
-}
-</script>
 </body>
 </html>
