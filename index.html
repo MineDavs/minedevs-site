@@ -1,14 +1,67 @@
-<header>
-    <h1 class="logo">JS ACADEMY</h1>
-</header>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Academy | Aprenda JavaScript</title>
+    <!-- Link para o seu CSS (Certifique-se que o nome do arquivo está igual) -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonte moderna do Google -->
+    <link href="https://googleapis.com" rel="stylesheet">
+</head>
+<body>
 
-<main class="modules-grid">
-    <div class="module-card">
-        <span>MÓDULO 01</span>
-        <h2>Fundamentos JS</h2>
-        <p>Aprenda variáveis, tipos de dados e operadores.</p>
-        <button onclick="location.href='logica.html'" class="btn-buy">ESTUDAR AGORA</button>
-    </div>
-    
-    <!-- Repita para outros módulos -->
-</main>
+    <!-- Barra de Navegação (Topo) -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <span class="nav-logo">JS ACADEMY</span>
+            <div class="nav-links">
+                <a href="#">Início</a>
+                <a href="https://discord.com" class="btn-discord">Discord</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Título Principal -->
+    <header class="hero">
+        <h1 class="main-title">DOMINE O JAVASCRIPT</h1>
+        <p class="subtitle">Aprenda do zero ao avançado com a melhor metodologia.</p>
+    </header>
+
+    <!-- Grade de Módulos (Cursos) -->
+    <section class="modules-grid">
+        
+        <!-- Cartão Módulo 1 -->
+        <div class="module-card">
+            <span class="tag">MÓDULO 01</span>
+            <h2>Fundamentos JS</h2>
+            <p>Variáveis, tipos de dados, operadores e a lógica inicial do JavaScript.</p>
+            <ul class="lesson-list">
+                <li>• Introdução ao Console</li>
+                <li>• Let e Const</li>
+                <li>• Operadores Matemáticos</li>
+            </ul>
+            <button class="btn-primary" onclick="location.href='logica.html'">COMEÇAR AGORA</button>
+        </div>
+
+        <!-- Cartão Módulo 2 -->
+        <div class="module-card">
+            <span class="tag">MÓDULO 02</span>
+            <h2>Manipulação de DOM</h2>
+            <p>Aprenda a dar vida ao seu HTML e CSS usando eventos de clique e muito mais.</p>
+            <ul class="lesson-list">
+                <li>• Seletores (QuerySelector)</li>
+                <li>• Eventos de Clique</li>
+                <li>• Alterando Estilos via JS</li>
+            </ul>
+            <button class="btn-primary">BLOQUEADO</button>
+        </div>
+
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 JS Academy - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
