@@ -1,66 +1,102 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: 'Segoe UI', Arial;
-  background: #0a0a0a;
+  background: linear-gradient(-45deg, #000, #0a0a0a, #111, #050505);
+  background-size: 400% 400%;
+  animation: bg 10s ease infinite;
   color: white;
 }
 
-/* HEADER */
-.header {
-  padding: 20px;
-  text-align: center;
-  border-bottom: 1px solid #222;
+@keyframes bg {
+  0% {background-position: 0%}
+  50% {background-position: 100%}
+  100% {background-position: 0%}
 }
 
-/* CONTAINER */
+.header {
+  text-align: center;
+  padding: 30px;
+  font-size: 25px;
+  letter-spacing: 5px;
+}
+
 .container {
-  max-width: 600px;
+  max-width: 500px;
   margin: auto;
   padding: 20px;
 }
 
-/* CARD */
 .card {
-  background: #111;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
   padding: 20px;
+  border-radius: 20px;
   margin: 15px 0;
-  border-radius: 15px;
   transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
 }
 
-/* BOTÃO */
+/* BOTÃO ANIMADO */
 .btn {
+  position: relative;
   display: inline-block;
+  padding: 12px 20px;
+  border-radius: 30px;
   background: white;
   color: black;
-  padding: 10px 15px;
-  border-radius: 20px;
   text-decoration: none;
+  overflow: hidden;
 }
 
-/* INPUT */
-input {
+.btn::before {
+  content: "";
+  position: absolute;
+  left: -100%;
   width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 10px;
-  border: none;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, white, transparent);
+  transition: 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.btn:active {
+  transform: scale(0.95);
 }
 
 /* PROGRESSO */
 .progress {
   background: #222;
   border-radius: 20px;
-  margin: 15px 0;
+  margin: 20px 0;
 }
 
 .bar {
-  height: 8px;
-  background: lime;
+  height: 10px;
   width: 0%;
+  background: lime;
   border-radius: 20px;
+  transition: 0.5s;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin: 10px 0;
 }
