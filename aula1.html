@@ -3,50 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aula 01 - MineDevs</title>
+    <title>Masterclass: Fundamentos da Programação | MineDevs</title>
     <style>
-        body { background: #000; color: #fff; font-family: sans-serif; margin: 0; padding: 40px 20px; text-align: center; }
-        .container { max-width: 450px; margin: 0 auto; text-align: left; }
-        
-        /* Card de Explicação igual ao da Home */
-        .card-aula { 
-            background: #111; border: 1px solid #222; border-radius: 15px; 
-            padding: 20px; margin-bottom: 15px; 
+        :root {
+            --bg: #000;
+            --card: #0a0a0a;
+            --border: #1a1a1a;
+            --accent: #fff;
+            --text-main: #fff;
+            --text-dim: #888;
+            --code-bg: #050505;
+            --code-text: #00ff41; /* Verde Matrix */
         }
-        
-        h1 { font-size: 22px; font-weight: 800; text-align: center; margin-bottom: 30px; }
-        h2 { font-size: 18px; color: #fff; margin: 0 0 10px 0; }
-        p { color: #888; font-size: 14px; line-height: 1.5; margin: 0; }
-        code { color: #0f0; background: #222; padding: 2px 5px; border-radius: 4px; }
 
-        /* Botão Sair igual ao Estudar Agora */
-        .btn-sair { 
-            display: block; width: 100%; padding: 16px 0; background: #fff; color: #000; 
-            text-decoration: none; font-weight: bold; border-radius: 8px; 
-            text-transform: uppercase; font-size: 13px; text-align: center; margin-top: 30px;
+        body { 
+            background: var(--bg); 
+            color: var(--text-main); 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Barra de Progresso no topo */
+        .progress-bar { position: fixed; top: 0; left: 0; height: 4px; background: var(--accent); width: 0%; z-index: 1000; transition: 0.3s; }
+
+        .container { max-width: 700px; margin: 0 auto; padding: 60px 24px; }
+
+        header { text-align: center; margin-bottom: 80px; }
+        .badge { display: inline-block; padding: 5px 12px; border: 1px solid var(--border); border-radius: 20px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: var(--text-dim); margin-bottom: 20px; }
+        h1 { font-size: clamp(32px, 8vw, 48px); font-weight: 900; letter-spacing: -2px; margin: 0; line-height: 1.1; }
+        .intro-text { font-size: 18px; color: var(--text-dim); margin-top: 20px; font-weight: 400; }
+
+        /* Estilo dos Capítulos */
+        section { margin-bottom: 100px; }
+        .capitulo-num { font-size: 14px; font-weight: 800; color: var(--text-dim); margin-bottom: 10px; display: block; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+        h2 { font-size: 28px; font-weight: 800; margin: 20px 0; letter-spacing: -1px; }
+        
+        .box { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 30px; margin: 30px 0; }
+        p { margin-bottom: 25px; font-size: 16px; color: #ccc; }
+        b { color: #fff; font-weight: 700; }
+
+        /* Blocos de Código Profissionais */
+        .code-window { background: var(--code-bg); border: 1px solid var(--border); border-radius: 12px; margin: 30px 0; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        .code-header { background: #111; padding: 10px 15px; display: flex; gap: 6px; border-bottom: 1px solid var(--border); }
+        .dot { width: 10px; height: 10px; border-radius: 50%; }
+        .red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
+        pre { padding: 20px; font-family: 'Fira Code', 'Courier New', monospace; font-size: 14px; color: var(--code-text); margin: 0; overflow-x: auto; }
+        .comment { color: #555; font-style: italic; }
+
+        /* Callout Box */
+        .tip { border-left: 4px solid var(--accent); background: #111; padding: 20px; border-radius: 0 12px 12px 0; margin: 30px 0; }
+
+        /* Botão de Finalização */
+        .footer-nav { border-top: 1px solid var(--border); padding-top: 50px; text-align: center; }
+        .btn-finish { 
+            display: inline-block; width: 100%; max-width: 400px; padding: 22px 0; 
+            background: var(--accent); color: var(--bg); text-decoration: none; 
+            font-weight: 900; border-radius: 14px; text-transform: uppercase; 
+            font-size: 14px; letter-spacing: 1px; transition: transform 0.2s;
+        }
+        .btn-finish:active { transform: scale(0.98); }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 36px; }
+            .box { padding: 20px; }
         }
     </style>
 </head>
 <body>
+
+    <div class="progress-bar" id="pb"></div>
+
     <div class="container">
-        <h1>Módulo 01: Fundamentos JS</h1>
+        <header>
+            <span class="badge">Elite Training • Módulo 01</span>
+            <h1>A Bíblia da Programação</h1>
+            <p class="intro-text">Do zero absoluto ao entendimento da lógica que governa o mundo digital.</p>
+        </header>
 
-        <div class="card-aula">
-            <h2>1. O que é JS?</h2>
-            <p>O JavaScript é a linguagem que dá vida aos sites. Com ele, criamos botões que funcionam e sistemas inteligentes.</p>
-        </div>
+        <!-- CAPÍTULO 1 -->
+        <section>
+            <span class="capitulo-num">CAPÍTULO 01</span>
+            <h2>A Máquina e o Intérprete</h2>
+            <p>Computadores são máquinas de processar sinais elétricos. Eles não entendem "Olá". Eles entendem <b>0 e 1 (Binário)</b>.</p>
+            <div class="box">
+                <p>A <b>programação</b> é a arte de traduzir o pensamento humano para algo que a máquina processe. Linguagens como <b>JavaScript</b> servem como essa ponte.</p>
+            </div>
+        </section>
 
-        <div class="card-aula">
-            <h2>2. Variáveis (As Caixas)</h2>
-            <p>Usamos variáveis para guardar nomes ou números. Exemplo: <code>let player = "Minedev";</code></p>
-        </div>
+        <!-- CAPÍTULO 2 -->
+        <section>
+            <span class="capitulo-num">CAPÍTULO 02</span>
+            <h2>Variáveis: Memória seletiva</h2>
+            <p>Tudo em um sistema precisa ser guardado. Nome de usuário, saldo, nível de bateria. Usamos <b>variáveis</b> para nomear espaços na memória RAM do computador.</p>
+            
+            <div class="code-window">
+                <div class="code-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
+                <pre>
+<span class="comment">// let: usado para valores que podem mudar</span>
+let saldo = 1500.00;
+saldo = 2000.00;
 
-        <div class="card-aula">
-            <h2>3. Lógica de Decisão</h2>
-            <p>É o famoso "Se acontecer isso, faça aquilo". Usamos o <b>IF</b> para o computador decidir o que fazer.</p>
-        </div>
+<span class="comment">// const: usado para valores que nunca mudam</span>
+const gravidade = 9.8;
+const nomeApp = "JS Academy";
+                </pre>
+            </div>
+            
+            <div class="tip">
+                <b>Dica Pro:</b> Sempre use <code>const</code> por padrão. Só use <code>let</code> se você tiver certeza que o valor vai mudar. Isso evita erros de lógica no futuro.
+            </div>
+        </section>
 
-        <a href="index.html" class="btn-sair">SAIR DA AULA</a>
+        <!-- CAPÍTULO 3 -->
+        <section>
+            <span class="capitulo-num">CAPÍTULO 03</span>
+            <h2>O Fluxo de Decisão (IF/ELSE)</h2>
+            <p>Um programa sem decisões é apenas uma lista de tarefas. A verdadeira inteligência nasce quando o código escolhe caminhos baseados em condições.</p>
+            
+            <div class="code-window">
+                <div class="code-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
+                <pre>
+let bateria = 9; <span class="comment">// Sua bateria atual</span>
+
+if (bateria < 10) {
+    console.log("Modo Economia: ATIVADO");
+} else {
+    console.log("Uso Normal: ATIVADO");
+}
+                </pre>
+            </div>
+            <p>Aqui usamos <b>operadores de comparação</b>: <code><</code> (menor), <code>></code> (maior), <code>===</code> (igual) e <code>!==</code> (diferente).</p>
+        </section>
+
+        <!-- CAPÍTULO 4 -->
+        <section>
+            <span class="capitulo-num">CAPÍTULO 04</span>
+            <h2>Funções: O Poder da Repetição</h2>
+            <p>Imagine ter que escrever 20 linhas de código toda vez que um usuário clicasse em "Comprar". Seria exaustivo. Funções permitem que você <b>empacote</b> uma lógica e a use quantas vezes quiser.</p>
+            
+            <div class="code-window">
+                <div class="code-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
+                <pre>
+function enviarMensagem(usuario) {
+    return "Olá, " + usuario + "! Bem-vindo à MineDevs.";
+}
+
+<span class="comment">// Chamando a função</span>
+console.log(enviarMensagem("Você"));
+                </pre>
+            </div>
+        </section>
+
+        <footer class="footer-nav">
+            <p style="color: var(--text-dim); font-size: 14px;">Você concluiu a leitura dos fundamentos de elite.</p>
+            <a href="index.html" class="btn-finish">CONCLUIR E SALVAR PROGRESSO</a>
+        </footer>
     </div>
+
+    <script>
+        // Script para a barra de progresso conforme o scroll
+        window.onscroll = function() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("pb").style.width = scrolled + "%";
+        };
+    </script>
+
 </body>
 </html>
