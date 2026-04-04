@@ -1,6 +1,13 @@
-/* =========================================
-   CONFIGURAÇÕES GERAIS (RESET)
-   ========================================= */
+/* RESET E CORES */
+:root {
+    --bg-body: #0a0a0a;
+    --bg-card: #141414;
+    --accent: #ffffff;
+    --text-main: #ffffff;
+    --text-sec: #888888;
+    --border: #222222;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -10,29 +17,24 @@
 }
 
 body {
-    background-color: #0a0a0a; /* Preto profundo */
-    color: #ffffff;
+    background-color: var(--bg-body);
+    color: var(--text-main);
     font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    overflow-x: hidden;
     padding-top: 100px; /* Espaço para a navbar fixa */
 }
 
-/* =========================================
-   BARRA DE NAVEGAÇÃO (NAVBAR)
-   ========================================= */
+/* NAVBAR */
 .navbar {
     width: 100%;
     height: 80px;
-    background-color: rgba(10, 10, 10, 0.95);
-    border-bottom: 1px solid #1a1a1a;
+    background-color: rgba(10, 10, 10, 0.9);
+    border-bottom: 1px solid var(--border);
     display: flex;
     justify-content: center;
-    align-items: center;
     position: fixed;
     top: 0;
     z-index: 1000;
-    backdrop-filter: blur(10px); /* Efeito de vidro */
+    backdrop-filter: blur(10px);
 }
 
 .nav-content {
@@ -45,37 +47,33 @@ body {
 
 .nav-logo {
     font-weight: 900;
-    letter-spacing: 6px;
-    font-size: 1.2rem;
-    color: #fff;
-    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 1.1rem;
 }
 
 .nav-links a {
-    color: #888;
-    font-size: 0.9rem;
-    font-weight: 500;
-    margin-left: 30px;
+    color: var(--text-sec);
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-left: 20px;
     transition: 0.3s;
 }
 
-.nav-links a:hover {
-    color: #fff;
-}
-
 .btn-discord {
-    background-color: #1a1a1a;
+    background: #1a1a1a;
     padding: 10px 20px;
+    border: 1px solid var(--border);
     border-radius: 5px;
-    border: 1px solid #333;
 }
 
-/* =========================================
-   CABEÇALHO (HERO SECTION)
-   ========================================= */
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+/* HERO SECTION */
 .hero {
     text-align: center;
-    padding: 80px 20px;
+    padding: 60px 20px;
 }
 
 .main-title {
@@ -83,110 +81,93 @@ body {
     font-weight: 900;
     letter-spacing: -1px;
     margin-bottom: 10px;
-    text-transform: uppercase;
 }
 
 .subtitle {
-    color: #888;
-    font-size: 1.1rem;
-    max-width: 600px;
+    color: var(--text-sec);
+    max-width: 500px;
     margin: 0 auto;
 }
 
-/* =========================================
-   GRADE DE MÓDULOS (CARDS)
-   ========================================= */
+/* GRID DE MÓDULOS */
 .modules-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 25px;
+    gap: 20px;
     padding: 40px 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .module-card {
-    background-color: #141414; /* Cinza levemente mais claro */
-    border: 1px solid #222;
-    border-radius: 20px;
-    padding: 40px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 35px;
     width: 100%;
-    max-width: 380px;
-    transition: all 0.4s ease;
+    max-width: 360px;
+    transition: 0.4s;
     display: flex;
     flex-direction: column;
 }
 
 .module-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
     border-color: #444;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
 .tag {
-    color: #555;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 800;
+    color: #555;
     letter-spacing: 2px;
     margin-bottom: 15px;
-    display: block;
 }
 
 .module-card h2 {
-    font-size: 1.6rem;
-    margin-bottom: 15px;
-    font-weight: 700;
+    margin-bottom: 10px;
 }
 
 .module-card p {
-    color: #888;
-    font-size: 0.95rem;
-    margin-bottom: 25px;
+    color: var(--text-sec);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
 }
 
-/* LISTA DE CONTEÚDO */
 .lesson-list {
     margin-bottom: 30px;
     flex-grow: 1;
 }
 
 .lesson-list li {
-    color: #666;
+    color: #555;
     font-size: 0.85rem;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
 }
 
-/* =========================================
-   BOTÕES
-   ========================================= */
+/* BOTÃO PREMIUM */
 .btn-primary {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: var(--accent);
+    color: #000;
     border: none;
-    padding: 18px;
-    border-radius: 12px;
-    font-weight: 800;
-    font-size: 0.9rem;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: 900;
     cursor: pointer;
-    text-transform: uppercase;
     transition: 0.3s;
-    width: 100%;
+    text-transform: uppercase;
 }
 
 .btn-primary:hover {
-    background-color: #e0e0e0;
-    letter-spacing: 1px;
+    background-color: #ccc;
+    transform: scale(1.02);
 }
 
-/* =========================================
-   RODAPÉ (FOOTER)
-   ========================================= */
+/* FOOTER */
 .footer {
     text-align: center;
-    padding: 60px 20px;
-    color: #444;
-    font-size: 0.8rem;
-    border-top: 1px solid #1a1a1a;
-    margin-top: 50px;
+    padding: 80px 20px;
+    border-top: 1px solid var(--border);
+    color: #333;
 }
