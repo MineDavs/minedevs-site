@@ -3,79 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MineDevs Academy | JavaScript</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Fonte Moderna -->
-    <link href="https://googleapis.com" rel="stylesheet">
+    <title>JS ACADEMY - MineDevs</title>
+    <style>
+        body { background: #0a0a0a; color: white; font-family: sans-serif; text-align: center; padding: 20px; }
+        .modulo { background: #1a1a1a; border-radius: 10px; padding: 20px; margin-bottom: 20px; border: 1px solid #333; }
+        
+        /* Botão Padronizado (Igual ao de sair) */
+        .botao { 
+            display: inline-block; padding: 12px 30px; background: white; color: black; 
+            text-decoration: none; font-weight: bold; border-radius: 5px; 
+            text-transform: uppercase; transition: 0.3s; margin-top: 10px;
+        }
+        .botao:hover { background: #ccc; }
+        .bloqueado { background: #333; color: #777; cursor: not-allowed; }
+    </style>
 </head>
 <body>
+    <h1>JS ACADEMY</h1>
+    <p>Escolha seu módulo e comece a aprender!</p>
 
-    <!-- BARRA DE NAVEGAÇÃO -->
-    <nav class="navbar">
-        <div class="nav-content">
-            <span class="nav-logo">MINEDEVS</span>
-            <div class="nav-links">
-                <a href="#">Aulas</a>
-                <a href="https://discord.com" class="btn-discord">COMUNIDADE</a>
-            </div>
-        </div>
-    </nav>
+    <!-- Módulo 1 -->
+    <div class="modulo">
+        <h3>01. Fundamentos JS</h3>
+        <p>Aprenda variáveis e lógica.</p>
+        <a href="aula1.html" class="botao">ESTUDAR AGORA</a>
+    </div>
 
-    <!-- CABEÇALHO PRINCIPAL -->
-    <header class="hero">
-        <h1 class="main-title">JS ACADEMY</h1>
-        <p class="subtitle">O portal oficial de aprendizado do grupo MineDevs. Domine a linguagem da web.</p>
-    </header>
+    <!-- Módulo 2 -->
+    <div class="modulo">
+        <h3>02. Dominação do DOM</h3>
+        <p>Manipule o HTML com JavaScript.</p>
+        <a href="#" class="botao bloqueado">EM BREVE</a>
+    </div>
 
-    <!-- GRADE DE CURSOS/MÓDULOS -->
-    <main class="modules-grid">
-        
-        <!-- Módulo 1 -->
-        <div class="module-card">
-            <span class="tag">MÓDULO 01</span>
-            <h2>Fundamentos JS</h2>
-            <p>A base de tudo: variáveis, tipos de dados, operadores e lógica inicial.</p>
-            <ul class="lesson-list">
-                <li>• Console e Variáveis</li>
-                <li>• Tipos Primitivos</li>
-                <li>• Operadores Lógicos</li>
-            </ul>
-            <button class="btn-primary" onclick="location.href='logica.html'">ESTUDAR AGORA</button>
-        </div>
-
-        <!-- Módulo 2 -->
-        <div class="module-card">
-            <span class="tag">MÓDULO 02</span>
-            <h2>Dominação do DOM</h2>
-            <p>Aprenda a manipular o HTML e CSS do seu site em tempo real com eventos.</p>
-            <ul class="lesson-list">
-                <li>• QuerySelector</li>
-                <li>• Eventos de Clique</li>
-                <li>• Criando Elementos</li>
-            </ul>
-            <button class="btn-primary">EM BREVE</button>
-        </div>
-
-        <!-- Módulo 3 -->
-        <div class="module-card">
-            <span class="tag">MÓDULO 03</span>
-            <h2>JS Avançado</h2>
-            <p>Async/Await, Promises e APIs. O próximo nível do seu desenvolvimento.</p>
-            <ul class="lesson-list">
-                <li>• Consumo de APIs</li>
-                <li>• Arrow Functions</li>
-                <li>• Local Storage</li>
-            </ul>
-            <button class="btn-primary">BLOQUEADO</button>
-        </div>
-
-    </main>
-
-    <!-- RODAPÉ -->
-    <footer class="footer">
-        <p>Desenvolvido por <strong>MineDevs</strong> &copy; 2024</p>
-        <p style="font-size: 0.7rem; margin-top: 10px; color: #333;">Transformando café em código de alta performance.</p>
-    </footer>
+    <!-- Módulo 3 -->
+    <div class="modulo">
+        <h3>03. JS Avançado</h3>
+        <p>Promises, Async e APIs.</p>
+        <a href="#" class="botao bloqueado">BLOQUEADO</a>
+    </div>
 
 </body>
 </html>
