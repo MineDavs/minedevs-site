@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
 <title>HTML - MineDevs</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body onload="verificarLogin()">
 
 <div class="container">
@@ -11,6 +13,8 @@
 <h1>HTML</h1>
 
 <div id="aula"></div>
+
+<br>
 
 <button onclick="voltar()" class="btn">⬅ Voltar</button>
 <button onclick="proxima()" class="btn">Próximo ➜</button>
@@ -24,75 +28,74 @@
 
 <script>
 let etapa = 0;
+let aula = document.getElementById("aula");
 
 function render() {
 
-if (etapa == 0) {
-aula.innerHTML = `
-<h2>O que é HTML?</h2>
-<p>HTML é a linguagem usada para criar a estrutura de um site.</p>
-<p>Ele organiza textos, imagens e elementos.</p>
-`;
-}
+  if (etapa === 0) {
+    aula.innerHTML = `
+      <h2>O que é HTML?</h2>
+      <p>HTML é a linguagem que cria a estrutura dos sites.</p>
+      <p>Ela organiza textos, imagens e elementos.</p>
+    `;
+  }
 
-else if (etapa == 1) {
-aula.innerHTML = `
-<h2>Tags</h2>
-<p>HTML usa "tags" para funcionar.</p>
-<pre>&lt;h1&gt;Título&lt;/h1&gt;</pre>
-<p>A maioria das tags abre e fecha.</p>
-`;
-}
+  else if (etapa === 1) {
+    aula.innerHTML = `
+      <h2>Tags</h2>
+      <p>HTML usa "tags" para funcionar.</p>
+      <pre>&lt;h1&gt;Título&lt;/h1&gt;</pre>
+      <p>A maioria abre e fecha.</p>
+    `;
+  }
 
-else if (etapa == 2) {
-aula.innerHTML = `
-<h2>Estrutura básica</h2>
-<pre>
+  else if (etapa === 2) {
+    aula.innerHTML = `
+      <h2>Estrutura básica</h2>
+      <pre>
 &lt;html&gt;
 &lt;head&gt;&lt;/head&gt;
 &lt;body&gt;
-Conteúdo
+  Conteúdo
 &lt;/body&gt;
 &lt;/html&gt;
-</pre>
-`;
-}
+      </pre>
+    `;
+  }
 
-else if (etapa == 3) {
-aula.innerHTML = `
-<h2>Principais tags</h2>
-<ul>
-<li>&lt;h1&gt; título</li>
-<li>&lt;p&gt; parágrafo</li>
-<li>&lt;img&gt; imagem</li>
-<li>&lt;a&gt; link</li>
-</ul>
-`;
-}
+  else if (etapa === 3) {
+    aula.innerHTML = `
+      <h2>Principais tags</h2>
+      <ul>
+        <li>&lt;h1&gt; Título</li>
+        <li>&lt;p&gt; Parágrafo</li>
+        <li>&lt;a&gt; Link</li>
+        <li>&lt;img&gt; Imagem</li>
+      </ul>
+    `;
+  }
 
-else if (etapa == 4) {
-aula.innerHTML = `
-<h2>Final</h2>
-<p>Agora você entende a base do HTML 😎</p>
-`;
-salvar();
-}
+  else if (etapa === 4) {
+    aula.innerHTML = `
+      <h2>Final 🎉</h2>
+      <p>Você aprendeu o básico de HTML 😎</p>
+    `;
+    salvar();
+  }
 }
 
 function proxima() {
-etapa++;
-if (etapa > 4) etapa = 4;
-render();
+  if (etapa < 4) {
+    etapa++;
+    render();
+  }
 }
 
 function voltar() {
-etapa--;
-if (etapa < 0) etapa = 0;
-render();
+  if (etapa > 0) {
+    etapa--;
+    render();
+  }
 }
 
-render();
-</script>
-
-</body>
-</html>
+/* IMPORTANTE
