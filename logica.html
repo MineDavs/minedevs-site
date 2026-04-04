@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+<title>Lógica</title>
+</head>
+<body onload="verificarLogin()">
+
+<div class="container">
+<h1>Lógica</h1>
+
+<div id="aula"></div>
+
+<button onclick="voltar()" class="btn">⬅</button>
+<button onclick="proxima()" class="btn">➡</button>
+
+<a href="index.html" class="btn">Voltar</a>
+</div>
+
+<script src="script.js"></script>
+
+<script>
+let etapa=0,aula;
+
+function render(){
+if(etapa==0)aula.innerHTML="<h2>Programação</h2><p>Dar comandos ao PC</p>";
+else if(etapa==1)aula.innerHTML="<h2>Variáveis</h2><p>Guardam dados</p>";
+else if(etapa==2)aula.innerHTML="<h2>Condições</h2><p>if / else</p>";
+else if(etapa==3)aula.innerHTML="<h2>Loops</h2><p>Repetição</p>";
+else{aula.innerHTML="<h2>Fim 😎</h2>";salvar();}
+}
+
+function proxima(){etapa++;if(etapa>4)etapa=4;render();}
+function voltar(){etapa--;if(etapa<0)etapa=0;render();}
+
+window.onload=function(){
+verificarLogin();
+aula=document.getElementById("aula");
+render();
+}
+</script>
+</body>
+</html>
