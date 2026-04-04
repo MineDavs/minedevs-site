@@ -3,22 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aula 01 - MineDevs</title>
+    <title>Aula 01 - Fundamentos JS</title>
     <style>
-        body { background: #0a0a0a; color: white; font-family: sans-serif; text-align: center; padding: 20px; }
-        .video-player { width: 100%; max-width: 700px; height: 400px; background: #222; margin: 30px auto; border-radius: 10px; display: flex; align-items: center; justify-content: center; border: 2px solid #444; }
-        .btn-acao { display: inline-block; width: 250px; padding: 15px; background: white; color: black; text-decoration: none; font-weight: bold; border-radius: 8px; text-transform: uppercase; }
+        body { background: #000; color: #fff; font-family: sans-serif; margin: 0; padding: 40px 20px; line-height: 1.6; }
+        .container { max-width: 500px; margin: 0 auto; text-align: left; }
+        
+        /* Estilo dos Cards de Explicação */
+        .card-aula { background: #111; border: 1px solid #222; border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        
+        h1 { font-size: 24px; font-weight: 800; text-align: center; margin-bottom: 5px; }
+        .sub { color: #666; font-size: 14px; text-align: center; margin-bottom: 30px; }
+        
+        h2 { color: #fff; font-size: 18px; margin-top: 0; border-left: 4px solid #fff; padding-left: 10px; }
+        p { color: #ccc; font-size: 15px; }
+        code { background: #222; color: #0f0; padding: 2px 6px; border-radius: 4px; font-family: monospace; }
+
+        /* Botão Sair igual ao da Home */
+        .botao-sair { 
+            display: block; width: 100%; padding: 15px 0; background: #fff; color: #000; 
+            text-decoration: none; font-weight: bold; border-radius: 8px; 
+            text-transform: uppercase; font-size: 13px; text-align: center; margin-top: 30px;
+        }
     </style>
 </head>
 <body>
-    <h1>Módulo 01: Fundamentos JS</h1>
-    
-    <div class="video-player">
-        <!-- Aqui você colocará o vídeo depois -->
-        <p>🎥 ÁREA DO VÍDEO DA AULA</p>
-    </div>
+    <div class="container">
+        <h1>Módulo 01</h1>
+        <p class="sub">Fundamentos e Lógica de Programação</p>
 
-    <a href="index.html" class="btn-acao">SAIR DA AULA</a>
+        <div class="card-aula">
+            <h2>1. O que é JavaScript?</h2>
+            <p>O JS é o "cérebro" do site. Enquanto o HTML cria os ossos, o JS cria as ações, como botões que funcionam e cálculos.</p>
+        </div>
+
+        <div class="card-aula">
+            <h2>2. Variáveis</h2>
+            <p>Imagine variáveis como caixas onde guardamos informações. Usamos <code>let</code> para criar uma: <br><br> <code>let nome = "MineDevs";</code></p>
+        </div>
+
+        <div class="card-aula">
+            <h2>3. Lógica de Decisão</h2>
+            <p>O computador decide coisas usando o <b>IF</b> (Se). <br><br> Exemplo: <i>Se</i> a bateria for menor que 10%, mostre um aviso.</p>
+        </div>
+
+        <a href="index.html" class="botao-sair">SAIR DA AULA</a>
+    </div>
 </body>
 </html>
-
