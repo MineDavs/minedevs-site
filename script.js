@@ -28,13 +28,31 @@ function verificarLogin() {
   }
 }
 
-function quiz(certo) {
-  if (certo) {
-    alert("Acertou 😎");
-    salvar();
-  } else {
-    alert("Errou 😢");
-  }
+function logout() {
+  localStorage.removeItem("user");
+  window.location.href = "login.html";
 }
+
+/* EFEITO BOTÃO */
+document.addEventListener("click", function(e) {
+  if (e.target.classList.contains("btn")) {
+    let btn = e.target;
+    let circle = document.createElement("span");
+
+    circle.style.position = "absolute";
+    circle.style.width = "100px";
+    circle.style.height = "100px";
+    circle.style.background = "rgba(255,255,255,0.5)";
+    circle.style.borderRadius = "50%";
+    circle.style.left = "50%";
+    circle.style.top = "50%";
+    circle.style.transform = "translate(-50%,-50%) scale(0)";
+    circle.style.animation = "ripple 0.5s linear";
+
+    btn.appendChild(circle);
+
+    setTimeout(() => circle.remove(), 500);
+  }
+});
 
 window.onload = atualizarBarra;
