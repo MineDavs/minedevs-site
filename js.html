@@ -1,25 +1,87 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>JavaScript - MineDevs</title>
 <link rel="stylesheet" href="style.css">
+<title>JavaScript - MineDevs</title>
 </head>
 <body onload="verificarLogin()">
 
 <div class="container">
+
 <h1>JavaScript</h1>
 
-<p>JavaScript cria interações.</p>
+<div id="aula"></div>
 
-<pre>alert("Oi");</pre>
-
-<button onclick="quiz(true)" class="btn">Interação</button>
-<button onclick="quiz(false)" class="btn">Imagem</button>
+<button onclick="voltar()" class="btn">⬅ Voltar</button>
+<button onclick="proxima()" class="btn">Próximo ➜</button>
 
 <br><br>
-<a href="index.html" class="btn">Voltar</a>
+<a href="index.html" class="btn">Sair da aula</a>
+
 </div>
 
 <script src="script.js"></script>
+
+<script>
+let etapa = 0;
+
+function render() {
+
+if (etapa == 0) {
+aula.innerHTML = `
+<h2>O que é JavaScript?</h2>
+<p>JavaScript adiciona interatividade ao site.</p>
+`;
+}
+
+else if (etapa == 1) {
+aula.innerHTML = `
+<h2>Exemplo</h2>
+<pre>alert("Olá");</pre>
+`;
+}
+
+else if (etapa == 2) {
+aula.innerHTML = `
+<h2>Eventos</h2>
+<p>JS reage a cliques e ações.</p>
+`;
+}
+
+else if (etapa == 3) {
+aula.innerHTML = `
+<h2>Funções</h2>
+<pre>
+function ola() {
+ alert("Oi");
+}
+</pre>
+`;
+}
+
+else if (etapa == 4) {
+aula.innerHTML = `
+<h2>Final</h2>
+<p>Agora você entende JS 😎</p>
+`;
+salvar();
+}
+}
+
+function proxima() {
+etapa++;
+if (etapa > 4) etapa = 4;
+render();
+}
+
+function voltar() {
+etapa--;
+if (etapa < 0) etapa = 0;
+render();
+}
+
+render();
+</script>
+
 </body>
 </html>
