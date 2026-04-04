@@ -3,45 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS ACADEMY</title>
+    <title>JS ACADEMY - MineDevs</title>
     <style>
-        body { background: #000; color: #fff; font-family: sans-serif; text-align: center; margin: 0; padding: 40px 20px; }
-        .container { max-width: 400px; margin: 0 auto; }
-        .modulo { background: #111; border: 1px solid #222; border-radius: 15px; padding: 25px; margin-bottom: 15px; }
-        h1 { font-size: 24px; font-weight: 800; margin-bottom: 5px; }
-        .sub { color: #666; font-size: 14px; margin-bottom: 30px; }
-        h3 { margin: 0 0 5px 0; font-size: 18px; }
-        .desc { color: #888; font-size: 13px; margin-bottom: 20px; }
-        .botao { 
-            display: block; width: 100%; padding: 15px 0; background: #fff; color: #000; 
-            text-decoration: none; font-weight: bold; border-radius: 8px; 
-            text-transform: uppercase; font-size: 13px; transition: 0.3s;
+        body { background: #000; color: #fff; font-family: sans-serif; margin: 0; padding-top: 60px; }
+        
+        /* Cabeçalho superior */
+        .navbar { position: fixed; top: 0; width: 100%; display: flex; justify-content: space-between; padding: 15px 20px; background: #000; border-bottom: 1px solid #111; font-size: 12px; font-weight: bold; box-sizing: border-box; }
+        .logo { letter-spacing: 2px; }
+
+        .container { max-width: 800px; margin: 0 auto; text-align: center; padding: 20px; }
+        h1 { font-size: 28px; margin-bottom: 5px; }
+        .sub-header { color: #666; font-size: 12px; margin-bottom: 40px; }
+
+        /* Grade dos Módulos */
+        .grid { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
+        
+        .card { 
+            background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 15px; 
+            padding: 20px; width: 100%; max-width: 320px; text-align: left;
         }
-        .bloqueado { background: #1a1a1a; color: #444; pointer-events: none; }
+        
+        .mod-tag { color: #444; font-size: 10px; font-weight: bold; text-transform: uppercase; display: block; margin-bottom: 10px; }
+        .card h3 { margin: 0 0 10px 0; font-size: 18px; }
+        .card p { color: #888; font-size: 13px; line-height: 1.4; margin-bottom: 15px; }
+        
+        /* Lista de Tópicos */
+        .topicos { list-style: none; padding: 0; margin: 0 0 20px 0; color: #555; font-size: 12px; }
+        .topicos li::before { content: "• "; margin-right: 5px; }
+
+        /* Botão igual da imagem */
+        .btn { 
+            display: block; width: 100%; padding: 12px 0; background: #fff; color: #000; 
+            text-decoration: none; font-weight: 800; border-radius: 8px; 
+            text-transform: uppercase; font-size: 11px; text-align: center;
+        }
+        .btn.disabled { background: #1a1a1a; color: #444; pointer-events: none; }
     </style>
 </head>
 <body>
+
+    <div class="navbar">
+        <div class="logo">MINEDEVS</div>
+        <div style="color: #444;">Aulas | COMUNIDADE</div>
+    </div>
+
     <div class="container">
         <h1>JS ACADEMY</h1>
-        <p class="sub">Escolha seu módulo e comece a aprender!</p>
+        <p class="sub-header">O portal oficial de aprendizado do grupo MineDevs. Domine a linguagem da web.</p>
 
-        <div class="modulo">
-            <h3>01. Fundamentos JS</h3>
-            <p class="desc">Aprenda variáveis e lógica inicial.</p>
-            <a href="aula1.html" class="botao">ESTUDAR AGORA</a>
-        </div>
+        <div class="grid">
+            <!-- Módulo 1 -->
+            <div class="card">
+                <span class="mod-tag">Módulo 01</span>
+                <h3>Fundamentos JS</h3>
+                <p>A base de tudo: variáveis, tipos de dados, operadores e lógica inicial.</p>
+                <ul class="topicos">
+                    <li>Conceito e Variáveis</li>
+                    <li>Tipos Primitivos</li>
+                    <li>Operadores Lógicos</li>
+                </ul>
+                <a href="aula1.html" class="btn">ESTUDAR AGORA</a>
+            </div>
 
-        <div class="modulo">
-            <h3>02. Dominação do DOM</h3>
-            <p class="desc">Manipule o HTML com JavaScript.</p>
-            <a href="#" class="botao bloqueado">EM BREVE</a>
-        </div>
+            <!-- Módulo 2 -->
+            <div class="card">
+                <span class="mod-tag">Módulo 02</span>
+                <h3>Dominação do DOM</h3>
+                <p>Aprenda a manipular o HTML e CSS do seu site em tempo real com eventos.</p>
+                <ul class="topicos">
+                    <li>QuerySelector</li>
+                    <li>Eventos de Clique</li>
+                    <li>Criando Elementos</li>
+                </ul>
+                <a href="#" class="btn disabled">EM BREVE</a>
+            </div>
 
-        <div class="modulo">
-            <h3>03. JS Avançado</h3>
-            <p class="desc">Promises, Async e APIs.</p>
-            <a href="#" class="botao bloqueado">BLOQUEADO</a>
+            <!-- Módulo 3 -->
+            <div class="card">
+                <span class="mod-tag">Módulo 03</span>
+                <h3>JS Avançado</h3>
+                <p>Async/Await, Promises e APIs. O próximo nível do seu desenvolvimento.</p>
+                <ul class="topicos">
+                    <li>Consumo de APIs</li>
+                    <li>Arrow Functions</li>
+                    <li>LocalStorage</li>
+                </ul>
+                <a href="#" class="btn disabled">BLOQUEADO</a>
+            </div>
         </div>
     </div>
+
 </body>
 </html>
