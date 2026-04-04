@@ -1,25 +1,87 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>CSS - MineDevs</title>
 <link rel="stylesheet" href="style.css">
+<title>CSS - MineDevs</title>
 </head>
 <body onload="verificarLogin()">
 
 <div class="container">
+
 <h1>CSS</h1>
 
-<p>CSS estiliza o site.</p>
+<div id="aula"></div>
 
-<pre>body { color: red; }</pre>
-
-<button onclick="quiz(true)" class="btn">Design</button>
-<button onclick="quiz(false)" class="btn">Banco</button>
+<button onclick="voltar()" class="btn">⬅ Voltar</button>
+<button onclick="proxima()" class="btn">Próximo ➜</button>
 
 <br><br>
-<a href="index.html" class="btn">Voltar</a>
+<a href="index.html" class="btn">Sair da aula</a>
+
 </div>
 
 <script src="script.js"></script>
+
+<script>
+let etapa = 0;
+
+function render() {
+
+if (etapa == 0) {
+aula.innerHTML = `
+<h2>O que é CSS?</h2>
+<p>CSS serve para deixar o site bonito.</p>
+`;
+}
+
+else if (etapa == 1) {
+aula.innerHTML = `
+<h2>Exemplo</h2>
+<pre>
+body {
+  color: red;
+}
+</pre>
+`;
+}
+
+else if (etapa == 2) {
+aula.innerHTML = `
+<h2>Cores e estilos</h2>
+<p>Você pode mudar cores, tamanho e fontes.</p>
+`;
+}
+
+else if (etapa == 3) {
+aula.innerHTML = `
+<h2>Layout</h2>
+<p>CSS controla posição dos elementos.</p>
+`;
+}
+
+else if (etapa == 4) {
+aula.innerHTML = `
+<h2>Final</h2>
+<p>Agora você sabe estilizar sites 😎</p>
+`;
+salvar();
+}
+}
+
+function proxima() {
+etapa++;
+if (etapa > 4) etapa = 4;
+render();
+}
+
+function voltar() {
+etapa--;
+if (etapa < 0) etapa = 0;
+render();
+}
+
+render();
+</script>
+
 </body>
 </html>
