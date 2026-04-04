@@ -3,44 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS ACADEMY - MineDevs</title>
+    <title>JS ACADEMY</title>
     <style>
-        body { background: #0a0a0a; color: white; font-family: sans-serif; text-align: center; padding: 20px; }
-        .modulo { background: #1a1a1a; border-radius: 10px; padding: 20px; margin-bottom: 20px; border: 1px solid #333; }
-        
-        /* Botão Padronizado (Igual ao de sair) */
-        .botao { 
-            display: inline-block; padding: 12px 30px; background: white; color: black; 
-            text-decoration: none; font-weight: bold; border-radius: 5px; 
-            text-transform: uppercase; transition: 0.3s; margin-top: 10px;
+        body { 
+            background: #000; color: #fff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            text-align: center; margin: 0; padding: 40px 20px;
         }
-        .botao:hover { background: #ccc; }
-        .bloqueado { background: #333; color: #777; cursor: not-allowed; }
+        h1 { font-size: 24px; font-weight: 800; letter-spacing: -1px; margin-bottom: 5px; }
+        p.sub { color: #666; font-size: 14px; margin-bottom: 40px; }
+
+        .container { max-width: 500px; margin: 0 auto; }
+
+        .modulo { 
+            background: #111; border: 1px solid #222; border-radius: 12px; 
+            padding: 25px; margin-bottom: 15px; transition: 0.3s;
+        }
+        
+        .modulo h3 { margin: 0 0 8px 0; font-size: 18px; }
+        .modulo p { color: #888; font-size: 13px; margin: 0 0 20px 0; }
+
+        .botao { 
+            display: block; width: 100%; padding: 14px 0; 
+            background: #fff; color: #000; text-decoration: none; 
+            font-weight: 700; border-radius: 8px; font-size: 14px;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+
+        .botao.bloqueado { background: #1a1a1a; color: #444; pointer-events: none; }
     </style>
 </head>
 <body>
-    <h1>JS ACADEMY</h1>
-    <p>Escolha seu módulo e comece a aprender!</p>
 
-    <!-- Módulo 1 -->
-    <div class="modulo">
-        <h3>01. Fundamentos JS</h3>
-        <p>Aprenda variáveis e lógica.</p>
-        <a href="aula1.html" class="botao">ESTUDAR AGORA</a>
-    </div>
+    <div class="container">
+        <h1>JS ACADEMY</h1>
+        <p class="sub">Escolha seu módulo e comece a aprender!</p>
 
-    <!-- Módulo 2 -->
-    <div class="modulo">
-        <h3>02. Dominação do DOM</h3>
-        <p>Manipule o HTML com JavaScript.</p>
-        <a href="#" class="botao bloqueado">EM BREVE</a>
-    </div>
+        <div class="modulo">
+            <h3>01. Fundamentos JS</h3>
+            <p>Aprenda variáveis e lógica inicial.</p>
+            <a href="aula1.html" class="botao">ESTUDAR AGORA</a>
+        </div>
 
-    <!-- Módulo 3 -->
-    <div class="modulo">
-        <h3>03. JS Avançado</h3>
-        <p>Promises, Async e APIs.</p>
-        <a href="#" class="botao bloqueado">BLOQUEADO</a>
+        <div class="modulo">
+            <h3>02. Dominação do DOM</h3>
+            <p>Manipule o HTML com JavaScript.</p>
+            <a href="#" class="botao bloqueado">EM BREVE</a>
+        </div>
+
+        <div class="modulo">
+            <h3>03. JS Avançado</h3>
+            <p>Promises, Async e APIs.</p>
+            <a href="#" class="botao bloqueado">BLOQUEADO</a>
+        </div>
     </div>
 
 </body>
